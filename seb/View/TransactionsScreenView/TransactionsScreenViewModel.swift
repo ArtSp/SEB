@@ -8,6 +8,7 @@ extension TransactionsScreenView {
     
     struct ViewState {
         var transactions: [Transaction]?
+        var isLoading = false
     }
     
     // MARK: - Input
@@ -23,9 +24,27 @@ extension TransactionsScreenView {
 class TransactionsScreenViewModelBase: ViewModelBase<TransactionsScreenView.ViewState, TransactionsScreenView.ViewInput> {
     
     var authService: AuthService { fatalError(.notImplemented) }
+    var paymentService: PaymentService { fatalError(.notImplemented) }
     
     init() {
         super.init(state: .init())
+    }
+    
+    func loadTransactions() {
+        paymentService.listTransactions()
+            .handleEvents(
+                receiveSubscription: { [weak self] _ in self?.state.isLoading = true },
+                receiveCompletion: { [weak self] _ in self?.state.isLoading = false })
+            .sinkResult { [weak self] result in
+                switch result {
+                case let .success(transactions):
+                    self?.state.transactions = transactions
+                    
+                case let .failure(error):
+                    Logger.log(error)
+                }
+            }
+            .store(in: &cancelables)
     }
     
     override func trigger(
@@ -36,8 +55,7 @@ class TransactionsScreenViewModelBase: ViewModelBase<TransactionsScreenView.View
             authService.logout()
             
         case .loadTransactions:
-            // TODO:
-            break
+            loadTransactions()
         }
     }
     
@@ -47,10 +65,24 @@ class TransactionsScreenViewModelBase: ViewModelBase<TransactionsScreenView.View
 
 final class TransactionsScreenViewModelImpl: TransactionsScreenViewModelBase {
     
+    override var authService: AuthService {
+        AuthServiceImpl.shared
+    }
+    
+    override var paymentService: PaymentService {
+        PaymentServiceImpl.shared
+    }
 }
 
 // MARK: - ViewModelFake
 
 final class TransactionsScreenViewModelFake: TransactionsScreenViewModelBase {
     
+    override var authService: AuthService {
+        AuthServiceFake.shared
+    }
+    
+    override var paymentService: PaymentService {
+        PaymentServiceFake.shared
+    }
 }

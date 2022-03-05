@@ -15,7 +15,7 @@ extension PinScreenView {
     // MARK: - Input
     
     enum ViewInput {
-        case didInput(String)
+        case didInput(Int)
     }
 }
 
@@ -35,7 +35,9 @@ class PinScreenViewModelBase: ViewModelBase<PinScreenView.ViewState, PinScreenVi
             .handleEvents(
                 receiveSubscription: { [weak self] _ in self?.state.isLoading = true },
                 receiveCompletion: { [weak self] _ in self?.state.isLoading = false })
-            .sinkResult { result in
+            .sinkResult { [weak self] result in
+                self?.state.pin.removeAll()
+                
                 switch result {
                 case .success: break
                 case let .failure(error): Logger.log(error)
@@ -48,8 +50,8 @@ class PinScreenViewModelBase: ViewModelBase<PinScreenView.ViewState, PinScreenVi
         _ input: Input
     ) {
         switch input {
-        case let .didInput(text):
-            state.pin += text
+        case let .didInput(pin):
+            state.pin += "\(pin)"
             if state.pin.count == state.requiredPinCount {
                 login()
             }

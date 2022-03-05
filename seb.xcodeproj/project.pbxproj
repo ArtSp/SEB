@@ -35,7 +35,13 @@
 		60BD3B9D27D38ADD00313BF5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BD3B9C27D38ADD00313BF5 /* Constants.swift */; };
 		60BD3BA027D38C4B00313BF5 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BD3B9F27D38C4B00313BF5 /* Logger.swift */; };
 		60BD3BA227D38D8B00313BF5 /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BD3BA127D38D8B00313BF5 /* String+Ex.swift */; };
-		60BD3BA427D38ED500313BF5 /* Bool+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BD3BA327D38ED500313BF5 /* Bool+Ex.swift */; };
+		60BD3BA727D3916E00313BF5 /* PaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BD3BA627D3916E00313BF5 /* PaymentService.swift */; };
+		60BD3BA927D3934800313BF5 /* Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BD3BA827D3934800313BF5 /* Shimmer.swift */; };
+		60BD3BAB27D393B500313BF5 /* Color+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BD3BAA27D393B500313BF5 /* Color+Ex.swift */; };
+		60BD3BAD27D3967100313BF5 /* GridStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BD3BAC27D3967100313BF5 /* GridStack.swift */; };
+		60BD3BB127D397FE00313BF5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 60BD3BB327D397FE00313BF5 /* Localizable.strings */; };
+		60BD3BB627D39E3800313BF5 /* Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BD3BB527D39E3800313BF5 /* Unwrap.swift */; };
+		60BD3BB827D39ED700313BF5 /* PlaceholderProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BD3BB727D39ED700313BF5 /* PlaceholderProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,7 +75,14 @@
 		60BD3B9C27D38ADD00313BF5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		60BD3B9F27D38C4B00313BF5 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		60BD3BA127D38D8B00313BF5 /* String+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
-		60BD3BA327D38ED500313BF5 /* Bool+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Ex.swift"; sourceTree = "<group>"; };
+		60BD3BA627D3916E00313BF5 /* PaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentService.swift; sourceTree = "<group>"; };
+		60BD3BA827D3934800313BF5 /* Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
+		60BD3BAA27D393B500313BF5 /* Color+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ex.swift"; sourceTree = "<group>"; };
+		60BD3BAC27D3967100313BF5 /* GridStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStack.swift; sourceTree = "<group>"; };
+		60BD3BB227D397FE00313BF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		60BD3BB427D3982D00313BF5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		60BD3BB527D39E3800313BF5 /* Unwrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unwrap.swift; sourceTree = "<group>"; };
+		60BD3BB727D39ED700313BF5 /* PlaceholderProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +150,7 @@
 		60BD3B6C27D37E2D00313BF5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				60BD3BAE27D3967F00313BF5 /* Components */,
 				60BD3B7927D37F5E00313BF5 /* CoreScreenView */,
 				60BD3B6B27D37E1B00313BF5 /* PinScreen */,
 				60BD3B9527D386ED00313BF5 /* TransactionsScreenView */,
@@ -164,6 +178,8 @@
 				60BD3B8927D3844600313BF5 /* Placeholder.swift */,
 				60BD3B9627D387A800313BF5 /* UserDefault.swift */,
 				60BD3B9F27D38C4B00313BF5 /* Logger.swift */,
+				60BD3BB527D39E3800313BF5 /* Unwrap.swift */,
+				60BD3BB727D39ED700313BF5 /* PlaceholderProvider.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -180,7 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				60BD3B8D27D384F900313BF5 /* Model.swift */,
-				60BD3B9827D3892A00313BF5 /* AuthService.swift */,
+				60BD3BA527D3915500313BF5 /* Services */,
 				60BD3B9027D3858800313BF5 /* Models */,
 			);
 			path = Model;
@@ -201,8 +217,8 @@
 				60BD3B8027D381F900313BF5 /* Locale+Ex.swift */,
 				60BD3B9A27D38AC500313BF5 /* Publishers+Ex.swift */,
 				60BD3B8527D3830500313BF5 /* View+Ex.swift */,
-				60BD3BA327D38ED500313BF5 /* Bool+Ex.swift */,
 				60BD3BA127D38D8B00313BF5 /* String+Ex.swift */,
+				60BD3BAA27D393B500313BF5 /* Color+Ex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -236,8 +252,27 @@
 			isa = PBXGroup;
 			children = (
 				60BD3B9C27D38ADD00313BF5 /* Constants.swift */,
+				60BD3BB327D397FE00313BF5 /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		60BD3BA527D3915500313BF5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				60BD3B9827D3892A00313BF5 /* AuthService.swift */,
+				60BD3BA627D3916E00313BF5 /* PaymentService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		60BD3BAE27D3967F00313BF5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				60BD3BA827D3934800313BF5 /* Shimmer.swift */,
+				60BD3BAC27D3967100313BF5 /* GridStack.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +317,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 60BD3B4627D37D1400313BF5;
 			productRefGroup = 60BD3B5027D37D1400313BF5 /* Products */;
@@ -299,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60BD3B5F27D37D1600313BF5 /* LaunchScreen.storyboard in Resources */,
+				60BD3BB127D397FE00313BF5 /* Localizable.strings in Resources */,
 				60BD3B5C27D37D1600313BF5 /* Assets.xcassets in Resources */,
 				60BD3B5A27D37D1400313BF5 /* Main.storyboard in Resources */,
 			);
@@ -311,11 +348,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60BD3BB627D39E3800313BF5 /* Unwrap.swift in Sources */,
+				60BD3BB827D39ED700313BF5 /* PlaceholderProvider.swift in Sources */,
 				60BD3B6F27D37E5F00313BF5 /* ViewModel.swift in Sources */,
 				60BD3B9227D386D800313BF5 /* TransactionsScreenViewModel.swift in Sources */,
 				60BD3B6A27D37E1400313BF5 /* PinScreenView.swift in Sources */,
 				60BD3B7627D37F4000313BF5 /* CoreScreenViewModel.swift in Sources */,
-				60BD3BA427D38ED500313BF5 /* Bool+Ex.swift in Sources */,
 				60BD3B7827D37F5100313BF5 /* CoreScreenView.swift in Sources */,
 				60BD3B5327D37D1400313BF5 /* AppDelegate.swift in Sources */,
 				60BD3B9D27D38ADD00313BF5 /* Constants.swift in Sources */,
@@ -326,8 +364,12 @@
 				60BD3BA227D38D8B00313BF5 /* String+Ex.swift in Sources */,
 				60BD3B9427D386E100313BF5 /* TransactionsScreenView.swift in Sources */,
 				60BD3B7127D37E9000313BF5 /* CancelableStore.swift in Sources */,
+				60BD3BAB27D393B500313BF5 /* Color+Ex.swift in Sources */,
 				60BD3B5527D37D1400313BF5 /* SceneDelegate.swift in Sources */,
+				60BD3BA727D3916E00313BF5 /* PaymentService.swift in Sources */,
+				60BD3BA927D3934800313BF5 /* Shimmer.swift in Sources */,
 				60BD3B7F27D381BC00313BF5 /* LocalePreview.swift in Sources */,
+				60BD3BAD27D3967100313BF5 /* GridStack.swift in Sources */,
 				60BD3B6827D37DF300313BF5 /* PinScreenViewModel.swift in Sources */,
 				60BD3B9727D387A800313BF5 /* UserDefault.swift in Sources */,
 				60BD3B8E27D384F900313BF5 /* Model.swift in Sources */,
@@ -359,6 +401,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		60BD3BB327D397FE00313BF5 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60BD3BB227D397FE00313BF5 /* en */,
+				60BD3BB427D3982D00313BF5 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -366,6 +417,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -427,6 +479,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
