@@ -43,6 +43,7 @@
 		60BD3BB627D39E3800313BF5 /* Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BD3BB527D39E3800313BF5 /* Unwrap.swift */; };
 		60BD3BB827D39ED700313BF5 /* PlaceholderProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BD3BB727D39ED700313BF5 /* PlaceholderProvider.swift */; };
 		60BD3BBC27D4A97400313BF5 /* SceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BD3BBB27D4A97400313BF5 /* SceneRouter.swift */; };
+		60BD3BBE27D4AF2800313BF5 /* APIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BD3BBD27D4AF2800313BF5 /* APIModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,7 @@
 		60BD3BB527D39E3800313BF5 /* Unwrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unwrap.swift; sourceTree = "<group>"; };
 		60BD3BB727D39ED700313BF5 /* PlaceholderProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderProvider.swift; sourceTree = "<group>"; };
 		60BD3BBB27D4A97400313BF5 /* SceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneRouter.swift; sourceTree = "<group>"; };
+		60BD3BBD27D4AF2800313BF5 /* APIModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				60BD3B8B27D384DF00313BF5 /* API.swift */,
+				60BD3BBD27D4AF2800313BF5 /* APIModels.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				60BD3B7D27D380C300313BF5 /* ViewModelBase.swift in Sources */,
 				60BD3BA227D38D8B00313BF5 /* String+Ex.swift in Sources */,
 				60BD3B9427D386E100313BF5 /* TransactionsScreenView.swift in Sources */,
+				60BD3BBE27D4AF2800313BF5 /* APIModels.swift in Sources */,
 				60BD3B7127D37E9000313BF5 /* CancelableStore.swift in Sources */,
 				60BD3BAB27D393B500313BF5 /* Color+Ex.swift in Sources */,
 				60BD3B5527D37D1400313BF5 /* SceneDelegate.swift in Sources */,

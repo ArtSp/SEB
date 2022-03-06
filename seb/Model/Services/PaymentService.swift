@@ -9,8 +9,17 @@ protocol PaymentService: CancelableStore {
 
 // MARK: - PaymentServiceImpl
 
-// TODO: Use API
-typealias PaymentServiceImpl = PaymentServiceFake
+final class PaymentServiceImpl: PaymentService {
+    
+    static let shared: PaymentServiceImpl = .init()
+    private init() {}
+    
+    func listTransactions() -> AnyPublisher<[Transaction], Error> {
+        API.transactions
+            .tryMap { items in try items.map { try $0.toDomain() } }
+            .eraseToAnyPublisher()
+    }
+}
 
 // MARK: - PaymentServiceFake
 

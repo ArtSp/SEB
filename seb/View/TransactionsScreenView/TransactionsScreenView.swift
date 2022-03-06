@@ -35,6 +35,7 @@ struct TransactionsScreenView: View {
             
             VStack(alignment: .trailing) {
                 Text(priceFormatter.string(from: NSNumber(value: transaction.price)) ?? "")
+                    .foregroundColor(transaction.price > 0 ? .sebPrimary : .sebSecondary)
                 Text(dateFormatter.string(from: transaction.date))
                     .textStyle(.caption)
             }
@@ -47,29 +48,31 @@ struct TransactionsScreenView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                Text("transactions_history")
-                    .padding(.vertical)
-                
-                Unwrap(viewModel.transactions) { transactions in
-                    LazyVStack(spacing: 16) {
-                        ForEach(transactions) { transaction in
-                            cell(for: transaction)
-                        }
-                    }
-                } fallbackContent: {
-                    if viewModel.isLoading {
+            ScrollView(.vertical) {
+                VStack {
+                    Text("transactions_history")
+                        .padding(.vertical)
+                    
+                    Unwrap(viewModel.transactions) { transactions in
                         LazyVStack(spacing: 16) {
-                            ForEach(Transaction.placeholders(count: 5)) { transaction in
+                            ForEach(transactions) { transaction in
                                 cell(for: transaction)
-                                    .asPlaceholder()
                             }
                         }
-                        .shimmed()
+                    } fallbackContent: {
+                        if viewModel.isLoading {
+                            LazyVStack(spacing: 16) {
+                                ForEach(Transaction.placeholders(count: 5)) { transaction in
+                                    cell(for: transaction)
+                                        .asPlaceholder()
+                                }
+                            }
+                            .shimmed()
+                        }
                     }
+                    
+                    Spacer()
                 }
-                
-                Spacer()
             }
             .padding(.horizontal)
             .frame(maxWidth: .infinity, alignment: .leading)

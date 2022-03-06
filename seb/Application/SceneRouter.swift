@@ -2,7 +2,7 @@ import SwiftUI
 
 enum SceneRouter {
     
-    static var useSimulatedMode = true
+    static var useSimulatedMode = false
     
     /// Create the SwiftUI view that provides the window contents.
     @ViewBuilder

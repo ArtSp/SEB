@@ -10,7 +10,16 @@ struct Transaction: Identifiable {
 
 // MARK: - Domain
 
-// TODO:
+extension API.Model.Transaction {
+    func toDomain() throws -> Transaction {
+        guard let price = Price(amount) else { throw "Data type invalid" }
+        return .init(id: id,
+              title: description,
+              description: counterPartyName,
+              date: date,
+              price: price)
+    }
+}
 
 // MARK: - Fakes
 
