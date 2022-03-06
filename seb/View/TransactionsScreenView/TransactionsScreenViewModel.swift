@@ -6,7 +6,8 @@ extension TransactionsScreenView {
     
     // MARK: - State
     
-    struct ViewState {
+    struct ViewState: Identifiable {
+        let id = UUID()
         var transactions: [Transaction]?
         var isLoading = false
     }

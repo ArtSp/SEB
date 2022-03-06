@@ -6,7 +6,8 @@ extension PinScreenView {
     
     // MARK: - State
     
-    struct ViewState {
+    struct ViewState: Identifiable {
+        let id = UUID()
         var pin = ""
         var requiredPinCount = 4
         var isLoading = false

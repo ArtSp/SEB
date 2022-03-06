@@ -31,8 +31,19 @@ class CoreScreenViewModelBase: ViewModelBase<CoreScreenView.ViewState, CoreScree
     
     override var bindings: [AnyCancellable] {
         [
-            
+            authService.isLoggedInPublisher
+                .removeDuplicates()
+                .sink(receiveValue: { [weak self] isLoggedIn in
+                    self?.setScreen(isLoggedIn: isLoggedIn)
+                })
         ]
+    }
+    
+    private func setScreen(
+        isLoggedIn: Bool
+    ) {
+        state.pinScreenViewModel = isLoggedIn ? nil : createPinScreenViewModel()
+        state.transactionsScreenViewModel = isLoggedIn ? createTransactionsScreenViewModel() : nil
     }
     
 }
@@ -40,6 +51,10 @@ class CoreScreenViewModelBase: ViewModelBase<CoreScreenView.ViewState, CoreScree
 // MARK: - ViewModelImpl
 
 final class CoreScreenViewModelImpl: CoreScreenViewModelBase {
+    
+    override var authService: AuthService {
+        AuthServiceImpl.shared
+    }
     
     override func createPinScreenViewModel() -> PinScreenView.ViewModel? {
         PinScreenViewModelImpl().toAnyViewModel()
@@ -54,6 +69,10 @@ final class CoreScreenViewModelImpl: CoreScreenViewModelBase {
 // MARK: - ViewModelFake
 
 final class CoreScreenViewModelFake: CoreScreenViewModelBase {
+    
+    override var authService: AuthService {
+        AuthServiceFake.shared
+    }
     
     override func createPinScreenViewModel() -> PinScreenView.ViewModel? {
         PinScreenViewModelFake().toAnyViewModel()

@@ -4,7 +4,9 @@ struct CoreScreenView: View {
     @ObservedObject var viewModel: ViewModel
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Color.sebWhite
+            .fullScreenCover(item: $viewModel.state.pinScreenViewModel) { PinScreenView(viewModel: $0) }
+            .fullScreenCover(item: $viewModel.state.transactionsScreenViewModel) { TransactionsScreenView(viewModel: $0) }
     }
 }
 
