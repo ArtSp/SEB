@@ -3,7 +3,7 @@ import Foundation
 extension API.Model {
     
     struct Transaction: Decodable {
-        let id: UUID
+        let id: API.ID
         let counterPartyName: String
         let counterPartyAccount: String
         let type: String
